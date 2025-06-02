@@ -3,3 +3,14 @@
   margin: 0 auto;
   padding: 0;
 }
+
+:root{
+  --main-bg-color:linear-gradient(#e8eaef, #cfd3dc);
+  --main-text-color:#797979;
+}
+
+[data-theme="dark"]{
+  --main-bg-color:black;
+  --main-text-color:white;
+
+} 
