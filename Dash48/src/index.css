@@ -26,8 +26,9 @@ body,
 
 header {
   width: 100%;
+  /* height: 20%; */
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
   background-color: var(--main-bg-color);
@@ -55,7 +56,6 @@ header {
   background: #fff;
   max-width: 350px;
   width: 300px;
-  /* scale: 1.05; */
   transition: 0.3s ease-in-out;
 }
 
@@ -108,39 +108,40 @@ header {
   width: 100%;
 }
 
-.out-img {
-  width: 100px;
-  height: 100px;
-}
 
-.out-img img {
-  width: 100%;
-  height: 100%;
-}
 
 #wls {
-  width: 230px;
-  height: 150px;
+  width: 180px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wls img{
+  width: 200px;
 }
 
 #indus {
   display: flex;
-  width: 200px;
-  gap: 1rem;
+  height: 80px;
+  gap: 1em;
   align-items: center;
   flex-direction: row;
   justify-content: center;
 }
+
+#indus img{
+  width: 100px;
+  height: 80px;
+}
+
 
 #indus h2 {
   font-size: 25px;
   color: var(--main-text-color);
 }
 
-#indus img {
-  width: 100px;
-  height: 90%;
-}
 
 #gear {
   color: black;
@@ -197,16 +198,16 @@ header {
   }
 
   #indus {
-    width: 100%;
+    width: 80%;
   }
 
   #indus img {
-    width: 78px;
-    height: 70px;
+    width: 70px;
+    height: 60px;
   }
 
   #wls {
-    width: 210px;
+    width: 200px;
   }
 
   #bo {
