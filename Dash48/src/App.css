@@ -7,10 +7,13 @@
 :root{
   --main-bg-color:linear-gradient(#e8eaef, #cfd3dc);
   --main-text-color:#797979;
+  --main-seta-color:black;
+  --main-volta-color:white;
 }
 
 [data-theme="dark"]{
   --main-bg-color:black;
   --main-text-color:white;
   --main-text-loja:white;
+  /* --main-volta-color:blue; */
 } 

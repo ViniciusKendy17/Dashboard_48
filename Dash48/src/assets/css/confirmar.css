@@ -1,0 +1,54 @@
+#confirm {
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#blocotodo {
+  width: 100%;
+  margin-top: -80px;
+  /* height: 100%; */
+  /* border: red solid 2px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0; /* Garante que não tenha espaço entre blocos */
+  /* padding: 0; */
+}
+
+#bloco1 {
+  z-index: 3;
+  transform: translateY(55%);
+}
+
+#bloco2 {
+  z-index: 2;
+}
+
+#bloco3 {
+  z-index: 1;
+  transform: translateY(-55%);
+}
+
+#final {
+  color: white !important;
+  width: 200px !important;
+  padding: 10px !important;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 90%;
+  left: 50%;
+}
+
+
+.toast {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 5%;
+  left: 50%;
+}
