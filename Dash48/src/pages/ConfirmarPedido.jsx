@@ -59,6 +59,9 @@ export default function Confirmar() {
     Settoast(!toast);
   };
 
+  /**
+   * Pega o id gerado pela api (id para cada pedido)
+   */
   async function getOp() {
     const res = await fetch("http://192.168.2.109:1881/op");
     const data = await res.json();
@@ -69,6 +72,9 @@ export default function Confirmar() {
     getOp();
   }, []);
 
+  /**
+   * Realiza um pedido e retorna o toast
+   */
   const pedir = () => {
     const sucesso = PedidoService(dados, andar, id, navigate);
     if (sucesso) {
@@ -111,11 +117,18 @@ export default function Confirmar() {
     },
   };
 
+  //Pega as cores de cada bloco
   const cores = dados.filter((item) => {
     const cor = item.key.match(/^Cor bloco (\d+)$/);
     return cor;
   });
 
+  /**
+   * Pega a imagem da lamina 
+   * @param {*} posicao 
+   * @param {*} value 
+   * @returns 
+   */
   function getLaminaImage(posicao, value) {
     return laminasImgs[posicao]?.[value] || null;
   }
@@ -135,6 +148,9 @@ export default function Confirmar() {
     }
   };
 
+  /**
+   * Retorna todas as laminas escolhidas pelo usuario
+   */
   const laminas = dados.filter((item) => {
     const lamina = item.key.match(/^Lamina (\d+)$/);
     return lamina;

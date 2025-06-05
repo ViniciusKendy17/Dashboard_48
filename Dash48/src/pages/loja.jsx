@@ -56,6 +56,22 @@ export default function Loja() {
     navaigate("/");
   };
 
+  const handleandar = (evt) => {
+    Setandar(evt.target.value);
+  };
+
+  const tooglemodal = (index) => {
+    Setmodal(!modal);
+    Setindex(index);
+  };
+
+  const handlePedido = async () => {
+    navaigate("/confirmar");
+  };
+
+  /**
+   * Pega todas as posições e suas respectivas cores disponveis
+   */
   async function getPosicoes() {
     try {
       const res = await fetch("http://192.168.2.109:1881/api/blocks");
@@ -97,15 +113,27 @@ export default function Loja() {
     },
   };
 
+  /**
+   * Pega a imagem da lamina com sua respectiva cor
+   * @param {*} posicao
+   * @param {*} value
+   * @returns
+   */
   function getLaminaImage(posicao, value) {
     return laminasImgs[posicao]?.[value] || null;
   }
 
+  /**
+   * Retorna todas as cores escolhidas pelo usuario
+   */
   const cores = dados.filter((item) => {
     const cor = item.key.match(/^Cor bloco (\d+)$/);
     return cor;
   });
 
+  /**
+   * Pega todas as laminas que o usuario escolheu
+   */
   const laminas = dados.filter((item) => {
     const lamina = item.key.match(/^Lamina (\d+)$/);
     return lamina;
@@ -123,19 +151,6 @@ export default function Loja() {
       default:
         return blpreto;
     }
-  };
-
-  const handleandar = (evt) => {
-    Setandar(evt.target.value);
-  };
-
-  const tooglemodal = (index) => {
-    Setmodal(!modal);
-    Setindex(index);
-  };
-
-  const handlePedido = async () => {
-    navaigate("/confirmar");
   };
 
   useEffect(() => {
@@ -175,7 +190,6 @@ export default function Loja() {
             value: posicaoDisponivel.position,
           });
         } else {
-          // Se não tem posição disponível, pode definir 0 ou deixar vazio
           novosDados.push({ key: posicaoKey, value: "0" });
           alert(`Não há posição disponível para o bloco ${a} com cor preta.`);
         }
@@ -197,6 +211,7 @@ export default function Loja() {
       }
     }
 
+    //Ordena as informações na ordem que a api pede
     novosDados.sort((a, b) => {
       const getOrder = (key) => {
         if (key.startsWith("Posicao estoque "))
@@ -216,6 +231,7 @@ export default function Loja() {
     }
   }, [andar, posicoes]);
 
+  //Retira informações de blocos que foram retiradas por causa do select de andares
   useEffect(() => {
     if (andar < andarAnterior) {
       const dadosFiltrados = dados.filter((item) => {
