@@ -2,13 +2,9 @@
 
 Dash48 is a web dashboard for industrial environments, built with **React 19 + Vite**, that centralizes the creation, tracking, and history of industrial block orders, and provides quick access to equipment monitoring dashboards.
 
----
-
 ## Context
 
 Dash48 was created to streamline order flow and production monitoring in the Smart 4.0 N2 plant, integrating with inventory and production control systems. It allows operators to create custom orders, track their status in real time, and view industrial indicators.
-
----
 
 ## ⚙️ Main Features
 
@@ -17,8 +13,6 @@ Dash48 was created to streamline order flow and production monitoring in the Sma
 - 📊 **Dashboards:** Quick access to Camera, Actuator Axes, UR Robot, and OEE panels.
 - 📜 **History:** (In development) View past orders.
 - 🔎 **Tracking:** (In development) See real-time order status.
-
----
 
 ## 🗂️ Project Structure
 
